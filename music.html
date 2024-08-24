@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #000000;
+        }
+        .playlist-card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .playlist-card:hover {
+            transform: scale(1.05);
+        }
+        .playlist-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .playlist-card-body {
+            padding: 1.5rem;
+        }
+        .playlist-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+           align-items: center;
+           color: black;
+        }
+        .playlist-description {
+            color: #ffffff;
+        }
+        .card-img-top{border-image-width: 100%;}
+    .main-content{margin: 100px;}
+    .main-content{color: #ffffff;}
+        
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <div class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img class="object-fit-cover" src="logo.png" alt="Bootstrap" width="40" >
+                </a>
+                <a class="navbar-brand" href="#">Spotify</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="log.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="music.html">Your Music</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+
+                    </form>
+                </div>
+            </nav>
+        </div>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">My Playlist</h1>
+        <div class="row">
+            <!-- Playlist Item 1 -->
+            <div class="col-md-4 mb-4">
+                <div class="card playlist-card">
+                    <a href="playl.html">
+                    <img src="img5.jpg" class="card-img-top" alt="playlist">
+                    <div class="card-body playlist-card-body">
+                        <h5 class="playlist-title">Lofi Song</h5>
+                        <p class="playlist-description">Playlist 1.</p>
+                        
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Playlist Item 2 -->
+            <div class="col-md-4 mb-4">
+                <div class="card playlist-card">
+                    <a href="playl.html">
+                    <img src="img6.jpg" class="card-img-top" alt="Playlist Image 2">
+                    <div class="card-body playlist-card-body">
+                        <h5 class="playlist-title">Classical</h5>
+                        <p class="playlist-description">Playlist 2</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Playlist Item 3 -->
+            <div class="col-md-4 mb-4">
+                <div class="card playlist-card">
+                    <a href="playl.html">
+                    <img src="img7.jpg" class="card-img-top" alt="Playlist Image 3">
+                    <div class="card-body playlist-card-body">
+                        <h5 class="playlist-title">>Mix Mashup</h5>
+                        <p class="playlist-description">Playlist 3</p>
+                    </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

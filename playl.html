@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Playlist</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #000000;
+    }
+    
+    header {
+        background-color: #000000;
+        color: #f8f8f8;
+        text-align: center;
+        padding: 1em 0;
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+    
+    main {
+        padding: 1em;
+    }
+    
+    .playlist {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+    
+    .song {
+        display: flex;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 1em;
+    }
+    
+    .album-cover {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    
+    .song-info {
+        margin-left: 1em;
+    }
+    
+    .song-title {
+        margin: 0;
+        font-size: 1.2em;
+    }
+    
+    .artist, .album {
+        margin: 0;
+        color: #666;
+    }
+    
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 0.5em 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+    .main-content{margin: 100px;}
+    
+</style>
+<body>
+    <div class="main-content">
+        <div class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img class="object-fit-cover" src="logo.png" alt="Bootstrap" width="40" >
+                </a>
+                <a class="navbar-brand" href="#">Spotify</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="log.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="music.html">Your Music</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+
+                    </form>
+                </div>
+            </nav>
+        </div>
+    <header>
+        <h1>My Song Playlist</h1>
+    </header>
+    <main>
+        <section class="playlist">
+            <div class="song">
+                <img src="img7.jpg" alt="Album Cover 1" class="album-cover">
+                <div class="song-info">
+                    <h2 class="song-title">Song Title 1</h2>
+                    <p class="artist">Artist 1</p>
+                    <p class="album">Album 1</p>
+                </div>
+            </div>
+            <div class="song">
+                <img src="img6.jpg" alt="Album Cover 2" class="album-cover">
+                <div class="song-info">
+                    <h2 class="song-title">Song Title 2</h2>
+                    <p class="artist">Artist 2</p>
+                    <p class="album">Album 2</p>
+                </div>
+            </div>
+            <div class="song">
+                <img src="img5.jpg" alt="Album Cover 2" class="album-cover">
+                <div class="song-info">
+                    <h2 class="song-title">Song Title 2</h2>
+                    <p class="artist">Artist 2</p>
+                    <p class="album">Album 2</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Playlist</p>
+    </footer>
+</body>
+</html>

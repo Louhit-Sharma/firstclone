@@ -1,0 +1,324 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+   .newclass {
+        background-color: white;}
+        .jumbotron-heading{color: #090909;}
+
+    .py-5 {
+        background-color: rgb(0, 0, 0);
+    }
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .sidebar {
+        position: fixed;
+        
+        left: 0;
+        height: 100vh;
+        width: 250px;
+        /* Width of the sidebar */
+        overflow-x: auto;
+        overflow-y: hidden;
+        /* Hide vertical scrollbar */
+        background-color: #090909;
+        border-right: 1px solid #dee2e6;
+        z-index: 1000;
+        top: 50px;
+        padding: 10px;
+       
+
+    }
+
+    .sidebar-content {
+        white-space: nowrap;
+    }
+
+    .main-content {
+        margin-left: 240px;
+        /* Same width as sidebar */
+        padding: 20px;
+    }
+
+    .sidebar-item {
+        padding: 10px;
+        color: rgb(254, 253, 253);
+        font-weight: bold;
+    }
+    .sidebar-item i{padding-right: 10px;}
+
+
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #121212;
+        color: #b3b3b3;
+    }
+    
+    .content {
+        padding: 20px;
+        padding-bottom: 80px; /* Add padding at the bottom to avoid content hiding behind the player bar */
+    }
+    
+    .player-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #282828;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+        border-top: 1px solid #333;
+    }
+    
+    .player-info {
+        display: flex;
+        align-items: center;
+    }
+    
+    .album-cover {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+    
+    .track-info {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .track-title {
+        margin: 0;
+        font-size: 1em;
+    }
+    
+    .artist-name {
+        margin: 0;
+        font-size: 0.9em;
+        color: #aaa;
+    }
+    
+    .controls {
+        display: flex;
+        align-items: center;
+    }
+    
+    .control-button {
+        background: none;
+        border: none;
+        color: #b3b3b3;
+        font-size: 1.2em;
+        margin: 0 5px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+    
+    .control-button:hover {
+        color: #fff;
+    }
+    
+    .play-pause {
+        font-size: 1.5em;
+    }
+    
+    .progress-bar {
+        flex-grow: 1;
+        background-color: #333;
+        border-radius: 4px;
+        height: 6px;
+        margin-left: 20px;
+        position: relative;
+    }
+    
+    .progress {
+        background-color: #1db954; /* Spotify Green */
+        height: 100%;
+        width: 0%; /* Example width, adjust dynamically */
+        border-radius: 4px;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+.object-fit-cover{background-color: #343a40 ;}
+    
+</style>
+
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="main-content">
+        <div class="fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">
+                    <img class="object-fit-cover" src="logo.png" alt="Bootstrap" width="40" >
+                </a>
+                <a class="navbar-brand" href="#">Spotify</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+
+
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="log.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="music.html">Your Music</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+
+                    </form>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="jumbotron text-center newclass">
+            <div class="container">
+                <h1 class="jumbotron-heading">Music for every moment</h1>
+                <p class="lead text-muted">Listen to your favorite artists and discover new music</p>
+                <p>
+                    <a href="start.html" class="btn btn-primary">Get Started</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Featured Playlists Section -->
+        <section class="py-5">
+            <div class="container">
+                <h2 class="mb-4">Featured Playlists</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="img1.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Today's Top Hits</h5>
+                                <p class="card-text">The hottest tracks of the day</p>
+                                <a href="#" class="btn btn-primary">Play</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="img2.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">RapCaviar</h5>
+                                <p class="card-text">The best of hip-hop and rap</p>
+                                <a href="#" class="btn btn-primary">Play</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <img class="card-img-top" src="img3.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">Electronic Rising</h5>
+                                <p class="card-text">The latest electronic tracks</p>
+                                <a href="#" class="btn btn-primary">Play</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <p class="text-muted">© 2023 Spotify</p>
+            </div>
+        </footer>
+    
+    <div class="sidebar">
+        <div class="sidebar-content">
+            <div class="sidebar-item"><i class="fa-solid fa-house" style="color: #ffffff;"></i>Home</div>
+            <a href="playl.html">
+            <div class="sidebar-item"><i class="fa-solid fa-magnifying-glass" style="color: #fcfcfc;"></i>Content</div></a>
+        
+            <a href="music.html">
+            <div class="sidebar-item"><i class="fa-solid fa-book-skull" style="color: #ffffff;"></i>Your Library</div></a>
+        
+            <br>
+            <br>
+            <a href="newlist.html">
+            <div class="sidebar-item"><i class="fa-regular fa-circle-play" style="color: #fafafa;"></i>New Playlist</div></a>
+            <a href="playl.html">
+            <div class="sidebar-item"><i class="fa-solid fa-heart" style="color: #ffffff;"></i>Liked Song</div></a>
+                
+            <!-- Add more items to make the sidebar scrollable horizontally -->
+        </div>
+    </div>
+    </div>
+
+    <div class="2ndcontainer">
+        
+    </div>
+   
+
+    <div class="content">
+        <!-- Main content of the page -->
+        <p>Your main content goes here...</p>
+    </div>
+    
+    <!-- Fixed Bottom Playback Bar -->
+    <div class="player-bar">
+        <div class="player-info">
+            <img src="img3.jpg" alt="Album Cover" class="album-cover">
+            <div class="track-info">
+                <p class="track-title">Song Title</p>
+                <p class="artist-name">Artist Name</p>
+            </div>
+        </div>
+        <div class="controls">
+            <button class="control-button">◄◄</button>
+            <button class="control-button">◄</button>
+            <button class="control-button play-pause">▶</button>
+            <button class="control-button">►</button>
+            <button class="control-button">►►</button>
+        </div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>
